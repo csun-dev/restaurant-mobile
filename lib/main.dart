@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant_mobile/constants/sizes.dart';
-import 'package:restaurant_mobile/screens/home.dart';
+import 'package:restaurant_mobile/features/main_navigation/main_navigation_screen.dart';
 
 void main() {
   runApp(const App());
@@ -14,7 +14,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: "Matador's Fresh Slice",
       theme: ThemeData(
-        primaryColor: Colors.black,
+        primaryColor: const Color(0xFF9b1818),
         scaffoldBackgroundColor: Colors.white,
         appBarTheme: const AppBarTheme(
             foregroundColor: Colors.black,
@@ -27,7 +27,7 @@ class App extends StatelessWidget {
             )),
         useMaterial3: false,
       ),
-      home: const Home(),
+      home: const MainNavigationScreen(),
     );
   }
 }
