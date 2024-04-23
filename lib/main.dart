@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:restaurant_mobile/constants/sizes.dart';
+import 'package:restaurant_mobile/screens/home.dart';
 
 void main() {
   runApp(const App());
@@ -12,9 +14,20 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: "Matador's Fresh Slice",
       theme: ThemeData(
-        useMaterial3: true,
+        primaryColor: Colors.black,
+        scaffoldBackgroundColor: Colors.white,
+        appBarTheme: const AppBarTheme(
+            foregroundColor: Colors.black,
+            backgroundColor: Colors.white,
+            elevation: 0,
+            titleTextStyle: TextStyle(
+              color: Colors.black,
+              fontSize: Sizes.size16 + Sizes.size2,
+              fontWeight: FontWeight.w600,
+            )),
+        useMaterial3: false,
       ),
-      home: Container(),
+      home: const Home(),
     );
   }
 }
