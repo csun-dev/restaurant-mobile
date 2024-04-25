@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:restaurant_mobile/constants/sizes.dart';
 import 'package:restaurant_mobile/features/home/home.dart';
@@ -24,6 +25,21 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: SvgPicture.asset(
+          'assets/logo.svg',
+          height: Sizes.size44,
+        ),
+        actions: [
+          IconButton(
+            icon: const Icon(
+              Icons.search,
+              size: Sizes.size32,
+            ),
+            onPressed: () {}, // Add search functionality
+          ),
+        ],
+      ),
       body: Stack(
         children: [
           Offstage(
