@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:restaurant_mobile/constants/gaps.dart';
 import 'package:restaurant_mobile/constants/sizes.dart';
 import 'package:restaurant_mobile/features/home/home.dart';
 import 'package:restaurant_mobile/features/main_navigation/widgets/nav_tab.dart';
@@ -26,9 +27,21 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: SvgPicture.asset(
-          'assets/logo.svg',
-          height: Sizes.size44,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SvgPicture.asset(
+              'assets/logo.svg',
+              height: Sizes.size44,
+            ),
+            Gaps.h10,
+            const Text(
+              "CSUN Pizzeria",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            )
+          ],
         ),
         actions: [
           IconButton(
@@ -36,7 +49,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
               Icons.search,
               size: Sizes.size32,
             ),
-            onPressed: () {}, // Add search functionality
+            onPressed: () {},
           ),
         ],
       ),
